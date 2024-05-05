@@ -140,8 +140,8 @@ class VCenterClient:
         self.logger.debug("retrieving all vm content for VCENTER %s", self.vc_name)
 
         # Create a container view of all VMs
-        vm_view = self.service_instance.viewManager.CreateContainerView(
-            self.service_instance.rootFolder, [vim.VirtualMachine], True
+        vm_view = self.service_instance.content.viewManager.CreateContainerView(
+            self.service_instance.content.rootFolder, [vim.VirtualMachine], True
         )
 
         # Create a dict of all VMs indexed by name
